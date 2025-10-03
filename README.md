@@ -1,4 +1,4 @@
-﻿# 🚀 Proyecto Pico-FFT: Transmisor FM y Analizador de Espectro Audible
+﻿# Proyecto Pico-FFT: Transmisor FM y Analizador de Espectro Audible
 
 <p align="center">
   <img src="https://img.shields.io/badge/estado-terminado-green?style=for-the-badge" alt="Estado del Proyecto"/>
@@ -18,37 +18,21 @@ Desarrollado por **Luis Francisco Sánchez Turrión** para el Grado en Tecnolog�
 
 ---
 
-## 📜 Índice
 
-- [✨ Características principales](#-características-principales)
-- [⚙️ ¿Cómo funciona?](#️-cómo-funciona)
-- [🔌 Hardware utilizado](#-hardware-utilizado)
-- [📐 Diseño y montaje](#-diseño-y-montaje)
-  - [Modificación del transmisor FM](#modificación-del-transmisor-fm)
-  - [Diseño de la PCB con KiCad](#diseño-de-la-pcb-con-kicad)
-- [💻 Software y firmware](#-software-y-firmware)
-  - [Entorno y librerías clave](#entorno-y-librerías-clave)
-  - [Flujo de trabajo del firmware](#flujo-de-trabajo-del-firmware)
-- [📊 Resultados y demostración](#-resultados-y-demostración)
-- [🚀 Futuras mejoras](#-futuras-mejoras)
-- [📄 Licencia](#-licencia)
+##  Características principales
 
----
-
-## ✨ Características principales
-
--   📡 **Transmisión FM analógica:** Emisión en la banda comercial (88–108 MHz) con un módulo Cebek FM-1 modificado.
--   🎛️ **Entrada de audio externa:** Permite transmitir audio desde cualquier fuente con conector jack de 3.5 mm (móvil, PC, etc.).
--   ⚡ **Análisis de espectro en tiempo real:** Visualización instantánea del espectro de frecuencias del audio recibido.
--   🧠 **Procesamiento de alto rendimiento:**
+-    **Transmisión FM analógica:** Emisión en la banda comercial (88–108 MHz) con un módulo Cebek FM-1 modificado.
+-    **Entrada de audio externa:** Permite transmitir audio desde cualquier fuente con conector jack de 3.5 mm (móvil, PC, etc.).
+-    **Análisis de espectro en tiempo real:** Visualización instantánea del espectro de frecuencias del audio recibido.
+-    **Procesamiento de alto rendimiento:**
     -   Captura de audio a **48 kHz** usando el ADC del RP2040 con **DMA** para no sobrecargar la CPU.
     -   Cálculo de una **FFT de 1024 puntos** con la librería `ARM CMSIS-DSP`, optimizada para el núcleo Cortex-M0+.
--   🎨 **Interfaz gráfica atractiva:** Una pantalla TFT a color de 2.8" (320x240) muestra el espectro de forma clara y fluida.
--   🛠️ **Hardware personalizado:** Una PCB diseñada desde cero en KiCad integra todos los componentes de forma compacta y profesional.
+-    **Interfaz gráfica atractiva:** Una pantalla TFT a color de 2.8" (320x240) muestra el espectro de forma clara y fluida.
+-    **Hardware personalizado:** Una PCB diseñada desde cero en KiCad integra todos los componentes de forma compacta y profesional.
 
 ---
 
-## ⚙️ ¿Cómo funciona?
+##  ¿Cómo funciona?
 
 El flujo de la señal es el siguiente:
 
@@ -61,7 +45,7 @@ El flujo de la señal es el siguiente:
 
 ---
 
-## 🔌 Hardware utilizado
+##  Hardware utilizado
 
 | Componente                        | Descripción                                                                                              | Imagen                                       |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
@@ -71,7 +55,7 @@ El flujo de la señal es el siguiente:
 
 ---
 
-## 📐 Diseño y montaje
+##  Diseño y montaje
 
 ### Modificación del transmisor FM
 
@@ -91,7 +75,7 @@ La placa principal del analizador fue diseñada en **KiCad 8.0** y fabricada por
 
 ---
 
-## 💻 Software y firmware
+##  Software y firmware
 
 El firmware se desarrolló en C/C++ sobre el **entorno Arduino**, utilizando el core de Earle Philhower para RP2040.
 
@@ -114,7 +98,7 @@ El firmware se desarrolló en C/C++ sobre el **entorno Arduino**, utilizando el 
 
 ---
 
-## 📊 Resultados y demostración
+##  Resultados y demostración
 
 El sistema final es totalmente funcional y ofrece una visualización fluida y en tiempo real del espectro de audio.  
 Las pruebas con diferentes tipos de señales (tonos puros, ondas complejas, música) demuestran la precisión y capacidad de respuesta del analizador.
@@ -125,17 +109,5 @@ Las pruebas con diferentes tipos de señales (tonos puros, ondas complejas, mús
 
 ---
 
-## 🚀 Futuras mejoras
 
--   **Transmisor con PLL:** Reemplazar el oscilador LC por uno basado en PLL para una frecuencia ultra estable.
--   **Optimización gráfica:** Acelerar el refresco de pantalla usando DMA en las transferencias SPI o técnicas de “dirty rectangle”.
--   **Receptor integrado:** Añadir un chip receptor FM (ej. TEA5767) en la PCB para un dispositivo todo en uno.
--   **Carcasa y batería:** Diseñar e imprimir en 3D una carcasa y añadir batería LiPo para hacerlo portátil.
-
----
-
-## 📄 Licencia
-
-Este proyecto se distribuye bajo la **Licencia MIT**.  
-Siéntete libre de usar, modificar y distribuir el código y los diseños, siempre que se incluya el aviso de copyright.
 
